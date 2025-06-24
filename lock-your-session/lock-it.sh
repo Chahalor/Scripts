@@ -89,6 +89,7 @@ while true; do
 			line_length=${#line}
 			horizontal_padding=$(( (cols - line_length) / 2 ))
 			echo -ne "${color}"
+			printf "%d" "$line_length"
 			printf "%*s%s%s\n" $horizontal_padding "" "${line}"
 			echo -ne "${_RESET}"
 		done
