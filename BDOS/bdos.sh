@@ -100,9 +100,9 @@ restart()
 cleanup()
 {
 	echo -e "\033[?25h" "\033[?1049l" "\033[0m"
-	# for device in ${LIST_MOUSE}; do
-	# 	xinput enable "$device" 2>/dev/null || true
-	# done
+	for device in ${LIST_MOUSE}; do
+		xinput enable "$device" 2>/dev/null || true
+	done
 	exit 0
 }
 
@@ -111,9 +111,9 @@ init()
 	trap cleanup INT TERM EXIT
 
 	echo -e "\033[?25l" "\033[?1049h"
-	# for device in ${LIST_MOUSE}; do
-	# 	xinput disable "$device" 2>/dev/null || true
-	# done
+	for device in ${LIST_MOUSE}; do
+		xinput disable "$device" 2>/dev/null || true
+	done
 	clear
 }
 
